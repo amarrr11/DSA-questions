@@ -26,64 +26,88 @@
 
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 vector<int> sortedArray(vector<int> a, vector<int> b) {
+    // Make an answer vector
     vector<int> ans;
     int n = a.size();
     int m = b.size();
     int i = 0;
     int j = 0;
-    while (i < n && j < m) {
-        if (a[i] <= b[j]) {
-            if (ans.empty() || ans.back() != a[i]) {
+    
+    // Merge the two sorted arrays
+    while (i < n && j < m) { 
+        if (a[i] <= b[j]) { 
+            // Add element from array a to ans if it's smaller or equal
+            if (ans.size() == 0 || ans.back() != a[i]) { 
+                // Ensure no duplicate elements are added
                 ans.push_back(a[i]);
             }
             i++;
         } else {
-            if (ans.empty() || ans.back() != b[j]) {
+            // Add element from array b to ans if it's smaller
+            if (ans.size() == 0 || ans.back() != b[j]) { 
+                // Ensure no duplicate elements are added
                 ans.push_back(b[j]);
             }
             j++;
         }
     }
-    while (i < n) {
-        if (ans.empty() || ans.back() != a[i]) {
+    
+    // Add remaining elements of array a
+    while (i < n) { 
+        if (ans.size() == 0 || ans.back() != a[i]) {
             ans.push_back(a[i]);
         }
         i++;
     }
-    while (j < m) {
-        if (ans.empty() || ans.back() != b[j]) {
+    
+    // Add remaining elements of array b
+    while (j < m) { 
+        if (ans.size() == 0 || ans.back() != b[j]) {
             ans.push_back(b[j]);
         }
         j++;
     }
+    
     return ans;
 }
 
 int main() {
+    // Input arrays
+    vector<int> a, b;
     int n, m;
-    cout << "Enter the size of array A: ";
+    
+    // Get the size of array a from the user
+    cout << "Enter the size of array a: ";
     cin >> n;
-    cout << "Enter elements of array A (in sorted order): ";
-    vector<int> a(n);
-    for (int i = 0; i < n; ++i) {
-        cin >> a[i];
+    // Input elements of array a
+    cout << "Enter the elements of array a: ";
+    for (int i = 0; i < n; i++) {
+        int num;
+        cin >> num;
+        a.push_back(num);
     }
 
-    cout << "Enter the size of array B: ";
+    // Get the size of array b from the user
+    cout << "Enter the size of array b: ";
     cin >> m;
-    cout << "Enter elements of array B (in sorted order): ";
-    vector<int> b(m);
-    for (int i = 0; i < m; ++i) {
-        cin >> b[i];
+    // Input elements of array b
+    cout << "Enter the elements of array b: ";
+    for (int i = 0; i < m; i++) {
+        int num;
+        cin >> num;
+        b.push_back(num);
     }
-
-    vector<int> mergedArray = sortedArray(a, b);
-
-    cout << "Merged sorted array without duplicates: ";
-    for (int num : mergedArray) {
+    
+    // Call sortedArray function
+    vector<int> merged = sortedArray(a, b);
+    
+    // Output the merged array
+    cout << "Merged Array: ";
+    for (int num : merged) {
         cout << num << " ";
     }
     cout << endl;
