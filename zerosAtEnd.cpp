@@ -15,18 +15,28 @@
 
 using namespace std;
 
-vector<int> moveZeros(int n, vector<int> a) {
-    for(int i = 0, j = 0; i < n; i++) {
-        if(a[i] != 0) {
-            swap(a[i], a[j]);
+vector<int> moveZeros(int n, vector<int> &arr) {
+    int j=-1;
+    for(int i=0;i<n;i++){
+        if(arr[i]==0){
+            j=i;
+            break;
+        }
+    }
+    if(j==-1){
+        return arr;
+    }
+    for(int i=j+1;i<n;i++){
+        if(arr[i]!=0){
+            swap(arr[i],arr[j]);
             j++;
         }
     }
-    return a;
+    return arr;
 }
 
 int main() {
-    vector<int> arr = {0, 1, 0, 3, 12};
+    vector<int> arr = { 1, 0, 3, 12,0,21,223,0,21};
 
     cout << "Original Array: ";
     for (int num : arr) {
