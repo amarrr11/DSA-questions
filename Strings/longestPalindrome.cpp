@@ -39,14 +39,14 @@ public:
                 count += lower[i];
             } else {
                 count += lower[i] - 1;
-                odd = true;
+                odd = 1;
             }
         
             if(upper[i] % 2 == 0) {
                 count += upper[i];
             } else {
                 count += upper[i] - 1;
-                odd = true;
+                odd = 1;
             }
         }
         return count + odd;
