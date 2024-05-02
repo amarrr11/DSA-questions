@@ -3,7 +3,7 @@
 //  index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
 
 // For example, if word = "abcdefd" and ch = "d", then you should reverse the segment that starts at 0 and ends at 3 
-// (inclusive). The resulting string will be "dcbaefd".
+// (inclusive). The resulting string will be "dcbaefd".dd
 
 
 #include <iostream>
