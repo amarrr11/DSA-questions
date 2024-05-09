@@ -20,12 +20,14 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
+
 class Solution {
 public:
-    std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2) {
-        std::vector<int> ans;
-        std::sort(nums1.begin(), nums1.end());
-        std::sort(nums2.begin(), nums2.end());
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> ans;
+        sort(nums1.begin(), nums1.end());
+        sort(nums2.begin(), nums2.end());
         int n = nums1.size();
         int m = nums2.size();
         int i = 0;
@@ -56,34 +58,34 @@ public:
 int main() {
     Solution solution;
     
-    std::vector<int> nums1, nums2;
+    vector<int> nums1, nums2;
     int n, m;
 
-    std::cout << "Enter the size of the first array: ";
-    std::cin >> n;
-    std::cout << "Enter the elements of the first array: ";
+    cout << "Enter the size of the first array: ";
+    cin >> n;
+    cout << "Enter the elements of the first array: ";
     for (int i = 0; i < n; ++i) {
         int num;
-        std::cin >> num;
+        cin >> num;
         nums1.push_back(num);
     }
 
-    std::cout << "Enter the size of the second array: ";
-    std::cin >> m;
-    std::cout << "Enter the elements of the second array: ";
+    cout << "Enter the size of the second array: ";
+    cin >> m;
+    cout << "Enter the elements of the second array: ";
     for (int i = 0; i < m; ++i) {
         int num;
-        std::cin >> num;
+        cin >> num;
         nums2.push_back(num);
     }
 
-    std::vector<int> result = solution.intersection(nums1, nums2);
+    vector<int> result = solution.intersection(nums1, nums2);
 
-    std::cout << "Intersection of the two arrays is: ";
+    cout << "Intersection of the two arrays is: ";
     for (int num : result) {
-        std::cout << num << " ";
+        cout << num << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
