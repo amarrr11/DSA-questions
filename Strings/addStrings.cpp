@@ -4,6 +4,11 @@
 // You must solve the problem without using any built-in library for handling large integers (such as BigInteger). 
 // You must also not convert the inputs to integers directly.
 
+// Example 1:
+
+// Input: num1 = "11", num2 = "123"
+// Output: "134"
+
 // Approach
 // Here we will first take the smaller string and run a while loop,then we will start adding from the right side cause
 // thats how we do addition.We will also take a int carry bit to store the carry part.Now w will begin from the right 
@@ -15,7 +20,6 @@
 
 #include <iostream>
 #include<algorithm>
-// #include "Solution.h" 
 
 using namespace std;
 class Solution {
