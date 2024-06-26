@@ -55,6 +55,21 @@ string read(int n, vector<int> book, int target)
     }
     return "NO";
 }
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> m;
+        int n=nums.size();
+        for(int i=0;i<n;i++){
+            if(m.find(target-nums[i])!=m.end()){
+                return {m[target-nums[i]],i};
+            }
+            m[nums[i]]=i;
+        }
+        return {-1,-1};
+        
+    }
+};
 
 
 
