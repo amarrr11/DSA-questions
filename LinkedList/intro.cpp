@@ -4,21 +4,23 @@ using namespace std;
 class Node{
 
     public:
+
     int data;
     Node* next;
 
-    //constructor is calleed when node is defined
-    Node(int data){
-        this->data=data;
-        this->next=NULL;
-    }
+    Node(int value){
+        data=value;
+        next=NULL;
+    }    
+
 };
 
 int main(){
 
-    Node* node1=new Node(); 
-    cout<< node1->data  <<endl;
-    cout<< node1->next <<endl;
+    Node *Head;
+    Head=new Node(4);
 
-    return 0;
+    cout<<Head->data<<endl;
+    cout<<Head->next<<endl;
+
 }

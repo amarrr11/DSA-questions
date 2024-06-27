@@ -21,7 +21,7 @@ Output: 15
 /*There are two ways: first ki make unoredred map and store each sum of each subarray while we transverse and store the sum in map
 with its count , then if sum-k will be present it means there is desired sum present and count plus 1.
 Another way is sliding window: We will find subarrays with sum<=goal and the subtract sum<=goal-1 , so we get sum=goal subarrays.
-*/
+
 /*
 Explanation of the Map Method
 Prefix Sum Concept:
