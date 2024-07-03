@@ -11,7 +11,7 @@ It is guaranteed that there will be a rectangle with a sum no larger than k.
 #include <vector>
 #include <climits>
 
-using namespace std;
+using namespace std;  
 
 class Solution {
 public:
