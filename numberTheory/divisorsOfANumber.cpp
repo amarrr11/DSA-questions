@@ -26,6 +26,20 @@ int* printDivisors(int n, int &size) {
     return ans;
 }
 
+//2
+
+ // vector<int> ans;
+    // for(int i=1;i<=n;i++){
+    //     if(n%i==0){
+    //         ans.push_back(i);
+    //     }
+    // }
+    // size=ans.size();
+    // int* res=new int[size];
+    // for(int i=0;i<size;i++){
+    //     res[i]=ans[i];
+    // }
+    // return res;
 int main() {
     int n;
     cout << "Enter a number: ";
