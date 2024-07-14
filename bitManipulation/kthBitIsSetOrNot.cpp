@@ -14,7 +14,7 @@ using namespace std;
 
 bool isKthBitSet(int n, int k) {
     // Check if the kth bit is set using left shift
-    if (n & (1 << (k - 1))) {
+    if (n & (1 << (k ))) {
         return true;
     }
     return false;
