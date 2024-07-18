@@ -23,7 +23,7 @@ int main(){
     cout<<fibo(n,dp)<<endl;
     return 0;
 }
-*/
+
 
 //using iterative (O(n))
 int fibo(int n,vector<int> &dp){
@@ -41,4 +41,45 @@ int main(){
     vector<int> dp(n+1); //dont initiaalize with -1
     cout<<fibo(n,dp)<<endl;
     return 0;
+}
+
+*/
+
+//TOPO SORT - DIRECTED ACYLIC GRAPH;
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+//to check cycle check size of ans i.e ans.size!=N;
+void toposort(){
+    queue<int>q;
+
+    for(int i=0;i<n;i++){
+        if(degree[i]==0){
+            q.push(i);
+        }
+    }
+    while(q.size()>0){
+        int d = q.front();
+        q.pop();
+        ans.push_back(d);
+        for(auto child : graph[d]){
+            degree[child]--;
+            if(dregree[child] == 0) q.push(child);
+        }
+    }
+}
+int main(){
+    int n,edge;     
+
+    vector<int>degree(n,0);
+    for(int i=0;i<edge;i++){
+        cin>>a>>b;
+        degree[b]++;
+    }
+    int n = grid.size();
+
+
 }
