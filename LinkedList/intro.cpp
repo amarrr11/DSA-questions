@@ -15,6 +15,8 @@ class Node{
 
 };
 
+/*CREATE A NODE
+
 int main(){
 
     Node *Head;
@@ -23,4 +25,12 @@ int main(){
     cout<<Head->data<<endl;
     cout<<Head->next<<endl;
 
+}
+
+*/
+
+INSERT A NODE AT FRONT OF LINKED LIST
+
+int main(){
+    if(Head )
 }

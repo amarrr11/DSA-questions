@@ -50,23 +50,6 @@ public:
             st.insert(freq[i]);
         }
         return result;
-        /*
-        int n=s.size();
-        vector<int> freq(26,0);
-        for(int i=0;i<n;i++){
-            freq[s[i]-'a']++;
-        }
-        int result=0;
-        sort(freq.begin(),freq.end());
-        for(int i=freq.size()-2;i>=0;i--){
-            // if(freq[i]==0) break;
-            while(freq[i]>=freq[i+1] && freq[i]>0){
-                freq[i]-=1;
-                result++;
-            }
-        }
-        return result;
-        */
     }
 };
 
