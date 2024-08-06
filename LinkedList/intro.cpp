@@ -60,11 +60,11 @@ int main(){
 
 //insert at end
 
-int main(){
-    Node *head;
-    head=NULL;
+// int main(){
+//     Node *head;
+//     head=NULL;
 
-    int arr[]={2,3,5,12,33};
+//     int arr[]={2,3,5,12,33};
 
     //way 1;
 
@@ -99,22 +99,139 @@ int main(){
 
     //way 3
 
-    Node *tail=NULL;
+    // Node *tail=NULL;
 
-    for(int i=0;i<5;i++){
-        if(head==NULL){
-            head=new Node(arr[i]);
-            tail=head;
-        }else{
+    // for(int i=0;i<5;i++){
+    //     if(head==NULL){
+    //         head=new Node(arr[i]);
+    //         tail=head;
+    //     }else{
 
-            tail->next=new Node(arr[i]);
-            tail=tail->next;
+    //         tail->next=new Node(arr[i]);
+    //         tail=tail->next;
+    //     }
+    // }
+
+    // Node *temp = head;
+    // while(temp!=NULL){
+    //     cout<<temp->data<<" ";
+    //     temp=temp->next;
+    // }
+
+    //using recursion:
+
+/*    Node* createLinkedList(int arr[],int index,int size){
+
+        if(index==size){
+            return NULL;
         }
+
+        Node* temp;
+        temp=new Node(arr[index]);
+        temp->next=createLinkedList(arr,index+1,size);
+
+        return temp;
     }
 
-    Node *temp = head;
-    while(temp!=NULL){
-        cout<<temp->data<<" ";
-        temp=temp->next;
+    int main(){
+        Node* Head;
+        Head=NULL;
+
+        int arr[]={2,3,4,5,6};
+
+        Head=createLinkedList(arr,0,5);
+
+        //print the answer:
+
+        Node* temp;
+        temp=Head;
+
+        while(temp){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        } 
     }
-}
+    */
+
+   // creating a linkedlist from end using recursion
+
+/*    Node* createLinkedList(int arr[],int index,int size,Node *prev){
+
+        if(index==size){
+            return prev;
+        }
+
+        Node* temp;
+        temp=new Node(arr[index]);
+        temp->next=prev;
+
+        return createLinkedList(arr,index+1,size,temp);
+
+    }
+
+    int main(){
+        Node* Head;
+        Head=NULL;
+
+        int arr[]={2,3,4,5,6};
+
+        Head=createLinkedList(arr,0,5,NULL);
+
+        //print the answer:
+
+        Node* temp;
+        temp=Head;
+
+        while(temp){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        } 
+    }
+    */
+
+   //adding a node at middle
+
+   Node* createLinkedList(int arr[],int index,int size){
+
+        if(index==size){
+            return NULL;
+        }
+
+        Node* temp;
+        temp=new Node(arr[index]);
+        temp->next=createLinkedList(arr,index+1,size);
+
+        return temp;
+    }
+
+   int main(){
+        Node* Head;
+        Head=NULL;
+
+        int arr[]={2,3,5,6,7};
+
+        Head=createLinkedList(arr,0,5);
+
+        //insert node at particular position
+        int x=2; //position
+        int value=4;
+
+        Node *temp=Head;
+        x--;
+
+        while(x--){
+            temp=temp->next;
+        }
+
+        Node *temp2=new Node(value);
+        temp2->next=temp->next;
+        temp->next=temp2;
+
+        //print the answer:
+        temp=Head;
+
+        while(temp){
+            cout<<temp->data<<" ";
+            temp=temp->next;
+        } 
+   }
