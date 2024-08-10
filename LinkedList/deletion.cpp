@@ -44,13 +44,14 @@ class Node{
         }*/
 
         //delete the last node(we need 2 pointers cause the last node after deletion needs to point to null)
-        Node *curr=Head;
-        Node *prev=NULL:
-        while(curr->next!=NULL){
-            prev=curr;
-            curr=curr->next;
-        }
+        //there are 3 options to delete last node;
+        //maybe linkedlist doesnt exist : so give condition that if head->next !=NULL
+        //linkedlist with 1 node only : 
+        //greater than 1 node
+
         
+
+
 
         //print the values
         while(Head!=NULL){
