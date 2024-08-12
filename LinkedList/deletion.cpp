@@ -49,7 +49,31 @@ class Node{
         //linkedlist with 1 node only : 
         //greater than 1 node
 
-        
+        //Delete a Node at end
+        if(Head!=NULL){
+            
+            //Only one node is present
+            if(Head->next==NULL){
+                Node* temp=Head;
+                delete temp;
+                Head=NULL;
+            }
+
+            //More than 1 node is present
+            else{
+                Node* curr=Head;
+                Node* prev=NULL;
+
+                //curr->next is not NULL
+                while(curr->next!=NULL){
+                    prev=curr;
+                    curr=curr->next;
+                }
+
+                prev->next=NULL;
+                delete curr;
+            }
+        }
 
 
 
