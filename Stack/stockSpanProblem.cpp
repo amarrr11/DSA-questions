@@ -56,7 +56,7 @@ public:
             }
             s.push(i);
         }
-        while (!s.empty()) {
+        while (!s.empty()) { //maybe arr={10,20,30}
             ans[s.top()] = s.top() + 1;
             s.pop();
         }
