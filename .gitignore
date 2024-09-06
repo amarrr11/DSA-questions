@@ -1,2 +1,4 @@
 
 *.exe
+class/.vscode/launch.json
+class/.vscode/tasks.json
