@@ -11,6 +11,46 @@ class Node {
         left=right=NULL;
     }
 };
+
+void PreOrder(Node *root){
+    if(root==NULL){
+        return ;
+    }
+
+    //Node
+    cout<<root->data<<endl;
+    //left
+    PreOrder(root->left);
+    //right
+    PreOrder(root->right);
+    
+}
+void InOrder(Node *root){
+    if(root==NULL){
+        return ;
+    }
+
+    //left
+    InOrder(root->left);
+    //Node
+    cout<<root->data<<endl;
+    //right
+    InOrder(root->right);
+    
+}
+void PostOrder(Node *root){
+    if(root==NULL){
+        return ;
+    }
+
+    //left
+    PostOrder(root->left);
+    //right
+    PostOrder(root->right);
+    //Node
+    cout<<root->data<<endl;
+}
+
 int main(){
 
     int x;
