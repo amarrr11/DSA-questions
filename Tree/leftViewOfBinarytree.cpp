@@ -54,7 +54,7 @@ vector<int> leftView(Node *root) {
             }
             
             if (temp->left) {
-                q.push(temp->left);
+                q.push(temp->left); 
             }
             if (temp->right) {
                 q.push(temp->right);
