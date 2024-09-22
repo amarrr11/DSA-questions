@@ -1,6 +1,6 @@
 /*Size of Binary Tree
 Difficulty: Basic
-Given a binary tree of size n, you have to count the number of nodes in it. For example, the count of nodes in the tree below is 4.*/
+Given a binary tree of size n, you have to count the number of nodes in it. */
 
 #include <bits/stdc++.h>
 using namespace std;
