@@ -53,7 +53,7 @@ public:
                 break;
             }
         }
-        if(carry) {
+        if(carry) { //if all the numbers are 9 then only
             int a = 0;
             vector<int> v(n+1);
             v[0] = 1;
