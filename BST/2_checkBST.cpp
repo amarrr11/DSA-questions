@@ -70,7 +70,8 @@ bool isBST(Node* root) {
     return true;
 }
 
-/*bool solve(Node *root,int &prev)
+/*
+bool solve(Node *root,int &prev)
     {
         if(!root) return 1;
         
