@@ -67,7 +67,6 @@ public:
     }
 };
 
-// Function to print the linked list
 void printList(Node* head) {
     Node* current = head;
     while (current != NULL) {

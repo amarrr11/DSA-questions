@@ -3,8 +3,6 @@
 2.Swap first and last position 
 3.size-- and take the node at first to its correct position using heapify
 
-
-
 */
 
 #include<bits/stdc++.h>

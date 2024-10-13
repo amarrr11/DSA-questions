@@ -38,7 +38,6 @@ struct Node
     }
 };
 
-// Function to delete the node at position x in the linked list
 Node* deleteNode(Node *Head, int x)
 {
     if(x == 1){
@@ -60,7 +59,6 @@ Node* deleteNode(Node *Head, int x)
     }
 }
 
-// Function to print the linked list
 void printList(Node* head) {
     Node* temp = head;
     while(temp != NULL) {

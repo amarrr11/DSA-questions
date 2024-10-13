@@ -46,7 +46,7 @@ public:
                 grid[row - 1][col - 1] = num; 
             } else {
                 cout << "Invalid input! Please enter numbers between 1 and 9." << endl;
-                continue;
+                continue;   
             }
 
             cout << "Do you want to continue adding numbers (y/n)? ";
@@ -90,41 +90,46 @@ public:
         }
 
         if (isEmpty) {
-            return true;  // If no unassigned cells, the Sudoku is solved
+            return true; 
         }
 
         for (int num = 1; num <= 9; num++) {
             if (isSafe(row, col, num)) {
-                grid[row][col] = num;  // Try placing the number
+                grid[row][col] = num; 
 
                 if (solveSudoku()) {
-                    return true;  // If the current placement leads to a solution, return true
+                    return true;  
                 }
 
-                grid[row][col] = 0;  // Backtrack if the number doesn't lead to a solution
+                grid[row][col] = 0;  
             }
         }
-        return false;  // Trigger backtracking
+        return false;  
     }
 
 
     bool isSafe(int row, int col, int num) {
-        // Check row
-        for (int x = 0; x < 9; x++)
-            if (grid[row][x] == num)
+        
+        for (int x = 0; x < 9; x++){
+            if (grid[row][x] == num){
                 return false;
+            }
+        }
 
-        // Check column
-        for (int x = 0; x < 9; x++)
-            if (grid[x][col] == num)
+        for (int x = 0; x < 9; x++){
+            if (grid[x][col] == num){
                 return false;
-
-        // Check 3x3 subgrid
+            }
+        }
+    
         int startRow = row - row % 3, startCol = col - col % 3;
-        for (int i = 0; i < 3; i++)
-            for (int j = 0; j < 3; j++)
-                if (grid[i + startRow][j + startCol] == num)
+        for (int i = 0; i < 3; i++){
+            for (int j = 0; j < 3; j++){
+                if (grid[i + startRow][j + startCol] == num){
                     return false;
+                }
+            }
+        }
 
         return true;
     }
