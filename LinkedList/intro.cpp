@@ -191,7 +191,7 @@ int main(){
 
    //adding a node at middle
 
-   Node* createLinkedList(int arr[],int index,int size){
+    Node* createLinkedList(int arr[],int index,int size){
 
         if(index==size){
             return NULL;
