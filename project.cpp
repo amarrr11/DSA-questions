@@ -50,7 +50,7 @@ public:
             }
 
             cout << "Do you want to continue adding numbers (y/n)? ";
-            cin >> cont;                      
+            cin >> cont;                     
             
             if (cont == 'n' || cont == 'N') { 
                 break;

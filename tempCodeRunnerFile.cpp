@@ -1,0 +1,2 @@
+
+            cin >> row >> col >> num; 

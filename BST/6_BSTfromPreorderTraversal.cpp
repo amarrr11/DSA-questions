@@ -12,9 +12,7 @@ Node.val, and any descendant of Node.right has a value strictly greater than Nod
 A preorder traversal of a binary tree displays the value of the node first, then traverses Node.left, then traverses
  Node.right.
 
-
 Example 1:
-
 
 Input: preorder = [8,5,1,7,10,12]
 Output: [8,5,10,1,7,null,12]
