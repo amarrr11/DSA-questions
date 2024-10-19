@@ -48,7 +48,7 @@ class Solution {
             return NULL;
 
         int mid = (start + end) / 2;
-        Node* newNode = new Node(nums[mid]);
+        Node* newNode = new Node(nums[mid]);    
 
         newNode->left = solve(nums, start, mid - 1);
         newNode->right = solve(nums, mid + 1, end);
