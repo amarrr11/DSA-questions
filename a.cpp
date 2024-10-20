@@ -1,27 +1,66 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
+int main() {
     int t;
     cin>>t;
     while(t--){
-    int n;
-    vector<int> v(n);
-    for(int i=0;i<n;i++){
-        cin>>v[i];
+        int n;
+        long long k;
+        cin>>n;
+        cin>>k;
+        vector<long long> v(k);
+        
+        for(int i=0;i<n;i++){
+            cin>>v[i];
+        }
+        bool flag=true;
+        for(int i=0;i<n;i++){
+            if(v[i]==k){
+                cout<<v[i]<<endl;
+                flag=false;
+                break;
+            }
+        }
+        if(!flag) continue;
+        int press=0;
+        
+        sort(v.begin(),v.end(),greater<int>());
+        for(int i:v){
+            press+=i;
+            if(press>k){
+                break;
+            }
+        }
+        if(press-1==k){
+            cout<<press<<endl;
+        }else{
+            cout<<press-1<<endl;
+        }
+        
+        // while(k){
+        //     int cnt=0;
+        //     for(int &i:v){
+        //         if(i==-1) continue;
+        //         if(i==0){
+        //             press++;
+        //             cnt++;
+        //             i=-1;
+        //             continue;
+        //         }
+        //         if(press>k){
+        //             cout<<press<<endl;
+        //             break;
+        //         }
+        //         cnt++;
+        //         i-=1;
+        //         press++;
+                
+        //     }
+        //     k-=cnt;
+        // }
+        
     }
-    int m1=0,m2=0,cnt1=0,cnt2=0;
-    for(int i=0;i<n;i+=2){
-        m1+=v[i];
-        cnt1++;
-    }
-    for(int i=1;i<n;i+=2){
-        m2+=v[i];
-        cnt2++;
-    }
+    
 
-    if(m1>m2){
-        cout<<m1+cnt1<<endl;
-    }else{
-        cout<<m2+cnt2<<endl;
-    }
+    return 0;
 }
