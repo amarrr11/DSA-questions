@@ -1,30 +1,34 @@
 // Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
+
 int main() {
-    
-    ll t;
+    long long t;
     cin>>t;
-    while(t--)
-    {
-        ll n;
+    while(t--){
+        long long n;
         cin>>n;
-        vector<ll> v(n);
+        vector<long long> v(n);
         for(auto &x:v){
             cin>>x;
         }
-        unordered_map<ll,ll> mp;
-        mp[0]=1;
-        ll sum=0;
-        ll ans=0;
-        for(ll i:v){
-            sum+=i;
-            if(sum==0){
-                ans++;
-                continue;
+        long long m=-1;
+        long long ans=0;
+        for(long long i=1;i<n;i++){
+            if(v[i]>v[i-1]){
+                m=v[i];
+                break;
             }
-            mp[sum]++;
+        }
+        if(m==-1){
+            cout<<0<<endl;
+            continue;
+        }
+        for(long long i=1;i<n;i++){
+            if(v[i]>=m){
+                ans++;
+                m=v[i];
+            }
         }
         cout<<ans<<endl;
     }
