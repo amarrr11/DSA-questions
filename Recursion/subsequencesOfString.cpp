@@ -14,9 +14,8 @@ using namespace std;
 void solve(string &s, int i, vector<string> &ans, string &temp) {
     int n = s.size();
     if (i == n) {
-        if (!temp.empty()) {
-            ans.push_back(temp);
-        }
+        ans.push_back(temp);
+        
         return;
     }
 
