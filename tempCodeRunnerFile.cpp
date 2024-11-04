@@ -21,17 +21,18 @@ int main() {
 
         int ans = 0;
         int top = 0, bottom = n - 1, left = 0, right = m - 1;
-
         while (top <= bottom && left <= right) {
+            
             string s="";
+            
             for (int j = left; j <= right; j++) {
-                s.push_back(mat[top][j]);
+                s+=(mat[top][j]+'0');
             }
             top++;
 
 
             for (int i = top; i <= bottom; i++) {
-                s.push_back(mat[i][right]);
+                s+=(mat[i][right]+'0');
             }
             right--;
 
@@ -39,7 +40,7 @@ int main() {
             if (top <= bottom) {
                 
                 for (int i = right; i >= left; i--) {
-                    s.push_back(mat[bottom][i]);
+                    s+=(mat[bottom][i]+'0');
                 }
                 bottom--;
             }
@@ -47,17 +48,19 @@ int main() {
             if (left <= right) {
                 
                 for (int i = bottom; i >= top; i--) {
-                    s.push_back(mat[i][left]);
+                    s+=(mat[i][left]+'0');
                 }
                 left++;
             }
-
-            for(int i=0;i<s.size()-3;i++){
-                if(s.substr(i,4)=="1543"){
-                    ans++;
+            s += s.substr(0, 3);
+            for (int i = 0; i <= int(s.size()) - 4; i++) {
+                if (s.substr(i, 4) == "1543") {
+                ans += 1;
                 }
             }
+            
         }
+        
 
         cout << ans << endl;
     }
