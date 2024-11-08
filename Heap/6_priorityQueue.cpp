@@ -18,7 +18,7 @@ int main(){
 
 
     //min heap
-    priority_queue<int, vector<int> ,greater<int>  > minheap;
+    priority_queue<int, vector<int> ,greater<int   >  > minheap;
 
     minheap.push(4); 
     minheap.push(2); 
