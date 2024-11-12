@@ -46,8 +46,7 @@ void Amar() {
             if(j<=r){
                 k1--;
             }
-            if(k1==0){
-                
+            if(k1==0){   
                 ans++;
                 break;
             }
