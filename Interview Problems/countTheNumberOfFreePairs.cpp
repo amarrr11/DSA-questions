@@ -31,7 +31,8 @@ public:
 
         for (int i = 0; i < n; i++) {
             auto lower_it = lower_bound(nums.begin() + i + 1, nums.end(), lower - nums[i]);
-            auto upper_it = upper_bound(nums.begin() + i + 1, nums.end(), upper - nums[i]);
+            auto upper_it = upper_
+            bound(nums.begin() + i + 1, nums.end(), upper - nums[i]);
             cnt += (upper_it - lower_it);
         }
         return cnt;
