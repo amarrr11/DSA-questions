@@ -1,194 +1,80 @@
-// // // Online C++ compiler to run C++ program online
-// // #include <bits/stdc++.h>
-// // using namespace std;
-
-// // int solve(vector<int> &v){
-// //     if(v.size()<=3) return 0;
-// //     int cnt=0;
-// //     for(int i=0;i<v.size()-3;i++){
-// //         if(v[i]==1 and v[i+1]==5 and v[i+2]==4 and v[i+3]==3){
-// //             cnt++;
-// //         }
-// //     }
-// //     return cnt;
-// // }
-
-// // int main() {
-// //      ios::sync_with_stdio(0);
-// // 	cin.tie(0);
-// //     int t;
-// //     cin>>t;
-// //     while(t--){
-// //         int n,m;
-// //         cin>>n>>m;
-// //         vector<vector<int>> mat(n,vector<int>(m));
-// //         for(int i = 0; i < n; ++i) {
-// //             for(int j = 0; j < m; ++j) {
-// //                 cin >> mat[i][j];
-// //             }
-// //         }
-// //         int ans=0;
-// //         int total=n*m;
-// //         int top=0;
-// //         int bottom=n-1;
-// //         int left=0;
-// //         int right=m-1;
-// //         while(top<=bottom and left<=right and total>=4){
-// //             vector<int> v;
-// //             for(int j=left;j<=right;j++){
-// //                 v.push_back(mat[top][j]);
-// //             }
-// //             top++;
-// //             for(int i=top;i<=bottom;i++){
-// //                 v.push_back(mat[i][right]);
-// //             }
-// //             right--;
-// //             for(int i=right;i>=left;i--){
-// //                 v.push_back(mat[bottom][i]);
-// //             }
-// //             bottom--;
-// //             for(int i=bottom;i>=top;i--){
-                
-// //                 v.push_back(mat[i][left]);
-// //             }
-// //             left++;
-// //             ans+=solve(v);
-// //             total-=(v.size());
-// //         }
-// //         cout<<ans<<endl;
-// //     }
-    
-// //     return 0;
-// // }
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// int solve(vector<int> &v) {
-//     if (v.size() < 4) return 0; // Change from <= 3 to < 4
-//     int cnt = 0;
-//     for (int i = 0; i <= v.size() - 4; i++) { // Adjust loop condition to allow for checking 4 elements
-//         if (v[i] == 1 && v[i + 1] == 5 && v[i + 2] == 4 && v[i + 3] == 3) {
-//             cnt++;
-//         }
-//     }
-//     return cnt;
-// }
-
-// int main() {
-//     ios::sync_with_stdio(0);
-//     cin.tie(0);
-//     int t;
-//     cin >> t;
-//     while (t--) {
-//         int n, m;
-//         cin >> n >> m;
-//         vector<vector<int>> mat(n, vector<int>(m));
-//         for (int i = 0; i < n; ++i) {
-//             for (int j = 0; j < m; ++j) {
-//                 cin >> mat[i][j];
-//             }
-//         }
-//         int ans = 0;
-//         int total = n * m;
-//         int top = 0;
-//         int bottom = n - 1;
-//         int left = 0;
-//         int right = m - 1;
-        
-//         // Change the while loop condition to check if total is >= 4
-//         while (top <= bottom && left <= right && total >= 4) {
-//             vector<int> v;
-//             for (int j = left; j <= right; j++) {
-//                 v.push_back(mat[top][j]);
-//             }
-//             top++;
-//             for (int i = top; i <= bottom; i++) {
-//                 v.push_back(mat[i][right]);
-//             }
-//             right--;
-//             if (top <= bottom) { // Check boundary
-//                 for (int i = right; i >= left; i--) {
-//                     v.push_back(mat[bottom][i]);
-//                 }
-//                 bottom--;
-//             }
-//             if (left <= right) { // Check boundary
-//                 for (int i = bottom; i >= top; i--) {
-//                     v.push_back(mat[i][left]);
-//                 }
-//                 left++;
-//             }
-//             ans += solve(v);
-//             total -= v.size();
-//         }
-//         cout << ans << endl;
-//     }
-    
-//     return 0;
-// }
-
 #include <bits/stdc++.h>
+
+#define loop(i, l, r) for (int i = (int)(l); i <= (int)(r); ++i)
+#define rloop(i, l, r) for (int i = (int)(r); i >= (int)(l); --i)
+
+#define pb push_back
+#define fi first
+#define se second
+
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define sz(a) int((a).size())
+
 using namespace std;
 
-int solve(vector<int> &v) {
-    if (v.size() < 4) return 0;
-    int cnt = 0;
-    for (int i = 0; i <= v.size() - 4; i++) {
-        if (v[i] == 1 && v[i + 1] == 5 && v[i + 2] == 4 && v[i + 3] == 3) {
-            cnt++;
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef pair<int, int> pp;
+typedef vector<pp> vpp;
+typedef vector<ll> vll;
+typedef vector<vll> vvll;
+typedef double ld;
+typedef pair<ll, ll> pll;
+typedef unordered_map<int, vi> uG;
+typedef unordered_map<int, vpp> wG;
+
+const int inf = 1e9;
+const ll INF = 1e18;
+const int MOD = 1e9 + 7;
+
+void Amar() {
+    ll n, k;
+    cin >> n >> k;
+    vector<ll> a(n);
+    vector<ll> b(n);
+    for (auto &x : a) {
+        cin >> x;
+    }
+    for (auto &x : b) {
+        cin >> x;
+    }
+    vector<pair<int,int>> v ;
+    for(int i=0;i<n;i++){
+        v.push_back({a[i],i});
+    }
+    sort(v.begin(),v.end());
+
+    for(auto &it:v){
+        
+        int f=it.first;
+        int s=it.second;
+
+        ans[s]=f/b[s];
+        k-=ans[s];
+    }
+    vector<int> ans(n);
+    if(k>0){
+        for(int i=0;i<n;i++){
+            cout<<0<<" ";
+        }
+    }else{
+        for(int i:ans){
+            cout<<i<<endl;
         }
     }
-    return cnt;
+    return;
 }
 
 int main() {
-    ios::sync_with_stdio(0);
+    ios::sync_with_stdio(false);
     cin.tie(0);
-    int t;
-    cin >> t;
-    while (t--) {
-        int n, m;
-        cin >> n >> m;
-        vector<vector<int>> mat(n, vector<int>(m));
-        for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < m; ++j) {
-                cin >> mat[i][j];
-            }
-        }
-        int ans = 0;
-        int top = 0, bottom = n - 1, left = 0, right = m - 1;
-
-        // Process until the matrix is completely traversed
-        while (top <= bottom && left <= right) {
-            vector<int> v;
-            // Top row
-            for (int j = left; j <= right; j++) {
-                v.push_back(mat[top][j]);
-            }
-            top++;
-            // Right column
-            for (int i = top; i <= bottom; i++) {
-                v.push_back(mat[i][right]);
-            }
-            right--;
-            // Bottom row
-            if (top <= bottom) {
-                for (int j = right; j >= left; j--) {
-                    v.push_back(mat[bottom][j]);
-                }
-                bottom--;
-            }
-            // Left column
-            if (left <= right) {
-                for (int i = bottom; i >= top; i--) {
-                    v.push_back(mat[i][left]);
-                }
-                left++;
-            }
-            // Count sequences in the collected vector
-            ans += solve(v);
-        }
-        cout << ans << endl; // Output the result for each test case
-    }
+    int testcase;
+    // Uncomment the following lines if multiple test cases are intended
+    // cin >> testcase;
+    // while (testcase--) {
+       Amar();
+    // }
     return 0;
 }
