@@ -42,7 +42,7 @@ public:
         int notSelect = solve(nums, idx + 1, dp);
         
         // Store and return the maximum of both cases
-        return dp[idx] = max(select, notSelect);
+        return dp[idx] = max(select, notSelect); 
     }
 
     int rob(vector<int>& nums) {
