@@ -38,7 +38,7 @@ int solve(int capacity, vector<int> &val, vector<int> &wt, int n) {
     
     if (wt[n - 1] <= capacity) {
         return dp[capacity][n] = max(val[n - 1] + solve(capacity - wt[n - 1], val, wt, n - 1),
-                                     solve(capacity, val, wt, n - 1));
+                                    solve(capacity, val, wt, n - 1));
     } else {
         return dp[capacity][n] = solve(capacity, val, wt, n - 1);
     }
