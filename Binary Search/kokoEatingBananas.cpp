@@ -35,7 +35,7 @@ public:
         long long n = piles.size();
         long long sum = 0;
         for (int i = 0; i < n; i++) {
-            sum += (piles[i] + mid - 1) / mid;
+            sum += (piles[i] + mid - 1) / mid;  //ceil (piles[i]/mid)
         }
         return sum;
     }
