@@ -41,7 +41,7 @@ int solve(int capacity, vector<int> &val, vector<int> &wt, int n) {
                                     solve(capacity, val, wt, n - 1));
     } else {
         return dp[capacity][n] = solve(capacity, val, wt, n - 1);
-    }
+    }   
 }
 
 int knapSack(int capacity, vector<int> &val, vector<int> &wt) {
