@@ -1,7 +1,7 @@
 # Configuration
 $repoPath = "C:\path\to\your\repository" # Replace with your local repository path
 $commitMessage = "Automated commit by PowerShell script"
-$pushInterval = 10 # Interval in seconds
+$pushInterval = 3600 # Interval in seconds
 
 # Change directory to the repository
 Set-Location $repoPath
