@@ -1,7 +1,7 @@
 # Configuration
-$repoPath = "C:\path\to\your\repository" # Replace with your local repository path
+$repoPath = "C:\Users\Amars\OneDrive\Desktop\DSA\DSA-questions" # Replace with your local repository path
 $commitMessage = "Automated commit by PowerShell script"
-$pushInterval = 3600 # Interval in seconds (1 hour)
+$pushInterval = 10 # Interval in seconds (1 hour)
 
 # Change directory to the repository
 Set-Location $repoPath
