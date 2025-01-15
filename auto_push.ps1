@@ -1,6 +1,6 @@
 # Configuration
-$repoPath = "C:\Users\Amars\OneDrive\Desktop\DSA\DSA-questions" # Replace with your local repository path
-$commitMessage = "Automated commit by PowerShell script"
+$repoPath = "C:\Users\Amars\OneDrive\Desktop\DSA\DSA-questions" # Path to your local GitHub repository
+$commitMessage = "Automated commit by script"
 $pushInterval = 3600 # Interval in seconds (1 hour)
 
 # Change directory to the repository
@@ -9,18 +9,22 @@ Set-Location $repoPath
 Write-Host "Monitoring directory: $repoPath"
 
 while ($true) {
-    # Check for uncommitted changes
-    $status = git status --porcelain
-    if ($status) {
-        Write-Host "Changes detected. Committing and pushing..."
-        git add .
-        git commit -m $commitMessage
-        git push
-        Write-Host "Changes pushed successfully!"
-    } else {
-        Write-Host "No changes to commit."
+    try {
+        # Check for uncommitted changes
+        $status = git status --porcelain
+        if ($status) {
+            Write-Host "Changes detected. Committing and pushing..."
+            git add .
+            git commit -m $commitMessage
+            git push
+            Write-Host "Changes pushed successfully!"
+        } else {
+            Write-Host "No changes to commit."
+        }
+    } catch {
+        Write-Host "An error occurred: $_"
     }
-    
-    # Wait before the next check (1 hour)
+
+    # Wait before checking again
     Start-Sleep -Seconds $pushInterval
 }
