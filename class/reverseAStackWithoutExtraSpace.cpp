@@ -5,7 +5,7 @@ using namespace std;
 
 void func(stack<int> &s){
     if(s.empty()){
-        
+
     }
     s.pop();
     func(s);
@@ -20,8 +20,5 @@ int main(){
     s.push(6);
     while(!s.empty()){
         func(s);
-    }
-
-    
-    
+    }  
 }
