@@ -58,6 +58,23 @@ public:
         return dp[idx][amt] = solve(amt - coins[idx], coins, idx) + solve(amt, coins, idx + 1);
     }
 
+    //2nd wayyyyyyyyyyyyyyy
+    int solve(vector<int> &coins,int sum,int i,vector<vector<int>> &dp){
+        if(sum==0) return 1;
+        if(i>=coins.size() or sum<0) return 0;
+        
+        
+        if(dp[sum][i]!=-1) return dp[sum][i];
+        int notTake=0+solve(coins,sum,i+1,dp);
+        
+        int take=0;
+        if(coins[i]<=sum){
+            take=max(solve(coins,sum-coins[i],i,dp),solve(coins,sum-coins[i],i+1,dp));
+        }
+        return dp[sum][i]=take+notTake;
+        
+    }
+
     int change(int amount, vector<int>& coins) {
         dp.resize(305, vector<int>(5002, -1));
         return solve(amount, coins, 0);   
