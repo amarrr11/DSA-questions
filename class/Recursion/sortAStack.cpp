@@ -42,6 +42,7 @@ void sort(stack<int> &s){
 
 int main(){
     stack<int> s;
+    
     s.push(11);
     s.push(2);
     s.push(32);
