@@ -19,7 +19,7 @@ void merge(vector<int> &v,int low,int mid,int high){
         ans.push_back(v[right++]);
     }
     for (int i = 0; i < ans.size(); i++) {
-        v[low + i] = ans[i];
+        v[i] = ans[i];
     }
 }
 
