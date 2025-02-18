@@ -35,12 +35,12 @@ public:
 
             cin >> row >> col >> num; 
 
-            if (cin.fail()) {                       
-                cin.clear();         
-                cin.ignore(10000, '\n');                         
-                cout << "Invalid input! Please enter numbers between 1 and 9." << endl;
-                continue; 
-            }
+            // if (cin.fail()) {                       
+            //     cin.clear();         
+            //     cin.ignore(10000, '\n');                         
+            //     cout << "Invalid input! Please enter numbers between 1 and 9." << endl;
+            //     continue; 
+            // }
 
             if (row >= 1 && row <= 9 && col >= 1 && col <= 9 && num >= 1 && num <= 9) {
                 grid[row - 1][col - 1] = num; 

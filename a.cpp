@@ -30,41 +30,35 @@ const ll INF = 1e18;
 const int MOD = 1e9 + 7;
 
 void Amar() {
-    ll n, k;
-    cin >> n >> k;
-    vector<ll> a(n);
-    vector<ll> b(n);
-    for (auto &x : a) {
-        cin >> x;
+    int n,m;
+    cin>>n>>m;
+    vector<int> a(n);
+    vector<int> b(m);
+    for(auto &x:a){
+        cin>>x;
     }
-    for (auto &x : b) {
-        cin >> x;
+    for(auto &x:b){
+        cin>>x;
     }
-    vector<pair<int,int>> v ;
-    for(int i=0;i<n;i++){
-        v.push_back({a[i],i});
+    
+    if(b[0]-a[0]<a[0]){
+        a[0]=b[0]-a[0];
     }
-    sort(v.begin(),v.end());
 
-    for(auto &it:v){
-        
-        int f=it.first;
-        int s=it.second;
-
-        ans[s]=f/b[s];
-        k-=ans[s];
-    }
-    vector<int> ans(n);
-    if(k>0){
-        for(int i=0;i<n;i++){
-            cout<<0<<" ";
-        }
-    }else{
-        for(int i:ans){
-            cout<<i<<endl;
+    for(int i=1;i<n-1;i++){
+        if(b[0]-a[i]<a[i] and b[0]-a[i]>=a[i-1] and b[0]-a[i]<=a[i+1]){
+            a[i]=b[0]-a[i];
         }
     }
-    return;
+    for(int i=0;i<n-1;i++){
+        if(a[i]>a[i+1]){
+            cout<<"NO"<<endl;
+            return;
+        }
+    }
+    
+    cout<<"YES"<<endl;
+    
 }
 
 int main() {
@@ -72,9 +66,9 @@ int main() {
     cin.tie(0);
     int testcase;
     // Uncomment the following lines if multiple test cases are intended
-    // cin >> testcase;
-    // while (testcase--) {
+    cin >> testcase;
+    while (testcase--) {
        Amar();
-    // }
+    }
     return 0;
 }
