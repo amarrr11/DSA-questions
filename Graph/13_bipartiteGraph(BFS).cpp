@@ -17,7 +17,6 @@ Input: adj = [[2, 3], [2], [0, 1, 3], [0, 2]]
 
 
 
-
 Output: false 
 Explanation: The given graph cannot be colored in two colors such that color of adjacent vertices differs. */
 
