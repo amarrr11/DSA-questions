@@ -15,8 +15,6 @@ Output: true
 Explanation: The given graph can be colored in two colors so, it is a bipartite graph.
 Input: adj = [[2, 3], [2], [0, 1, 3], [0, 2]]
 
-
-
 Output: false 
 Explanation: The given graph cannot be colored in two colors such that color of adjacent vertices differs. */
 
@@ -30,7 +28,7 @@ class Solution {
 public:
     bool bfs(vector<vector<int>>& adj, vector<int>& col, int i) {
         queue<int> q;
-        q.push(i);
+        q.push(i);  
         
         col[i] = 0; // Start coloring
         

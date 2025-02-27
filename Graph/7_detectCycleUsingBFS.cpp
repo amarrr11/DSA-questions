@@ -34,9 +34,9 @@ bool bfs(int src, vector<vector<int>>& adj, vector<bool>& vis) {
         int node = q.front().first;
         q.pop();
 
-        for (auto it : adj[node]) {
+        for (auto it : adj[nod  e]) {
             if (!vis[it]) {
-                vis[it] = 1;
+                vis[it] = 1;   
                 q.push({it, node});
             } else if (it != parent) {
                 return true;

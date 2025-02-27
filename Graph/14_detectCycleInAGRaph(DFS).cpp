@@ -1,5 +1,5 @@
 /*Cycle in a Directed Graph
-Difficulty: MediumAccuracy: 27.88%Submissions: 447K+Points: 4
+
 Given a Directed Graph with V vertices (Numbered from 0 to V-1) and E edges, check whether it contains any cycle or not.
 The graph is represented as an adjacency list, where adj[i] contains a list of vertices that are directly reachable from 
 vertex i. Specifically, adj[i][j] represents an edge from vertex i to vertex j.*/
