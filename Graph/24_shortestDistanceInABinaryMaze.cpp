@@ -48,7 +48,7 @@ public:
         
         vector<vector<int>> dist(n, vector<int>(m, INT_MAX));
         dist[source.first][source.second] = 0;
-        
+                        
         vector<int> a = {-1, 0, 1, 0};
         vector<int> b = {0, 1, 0, -1};
         
@@ -58,7 +58,7 @@ public:
             int j = q.front().second.second;
             q.pop();
             
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < 4; k++) {   
                 int newr = i + a[k];
                 int newc = j + b[k];
                 
