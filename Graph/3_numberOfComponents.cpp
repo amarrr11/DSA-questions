@@ -13,7 +13,6 @@ public:
             }
         }
     }
-
     int numProvinces(vector<vector<int>> adj, int V) {
         vector<vector<int>> adjLs(V);
         for (int i = 0; i < V; i++) { //convert adj matrix to list
