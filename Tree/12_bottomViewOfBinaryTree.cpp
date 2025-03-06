@@ -38,7 +38,7 @@ class Solution {
     vector<int> topView(Node *root) {
         vector<int> ans;
         if(root == nullptr) return ans; // Edge case
-        
+            
         queue<pair<Node*,int>> q;
         map<int,int> mp;
         

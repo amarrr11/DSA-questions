@@ -1,5 +1,5 @@
 /*Shortest path in Directed Acyclic Graph
-Difficulty: MediumAccuracy: 48.48%Submissions: 156K+Points: 4Average Time: 20m
+
 Given a Directed Acyclic Graph of V vertices from 0 to n-1 and a 2D Integer array(or vector) edges[ ][ ] of length E, where
  there is a directed edge from edge[i][0] to edge[i][1] with a distance of edge[i][2] for all i.
 
@@ -53,9 +53,9 @@ Explanation: Shortest path from 0 to 1 is 0->1 with edge weight 2. Shortest path
              }
          }
  
-         for (int i = 0; i < V; i++) {
-             if (dist[i] == INT_MAX) dist[i] = -1;
-         }
+        for (int i = 0; i < V; i++) {
+            if (dist[i] == INT_MAX) dist[i] = -1;
+        }
          return dist;
      }
  };

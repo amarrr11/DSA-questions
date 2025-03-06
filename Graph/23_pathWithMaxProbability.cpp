@@ -1,9 +1,5 @@
 /*1514. Path with Maximum Probability
-Solved
-Medium
-Topics
-Companies
-Hint
+
 You are given an undirected weighted graph of n nodes (0-indexed), represented by an edge list where edges[i] = [a, b] is an
  undirected edge connecting the nodes a and b with a probability of success of traversing that edge succProb[i].
 
@@ -21,7 +17,8 @@ Example 1:
 
 Input: n = 3, edges = [[0,1],[1,2],[0,2]], succProb = [0.5,0.5,0.2], start = 0, end = 2
 Output: 0.25000
-Explanation: There are two paths from start to end, one having a probability of success = 0.2 and the other has 0.5 * 0.5 = 0.25.*/
+Explanation: There are two paths from start to end, one having a probability of success = 0.2 and the other has 0.5 * 0.5 = 0.25.
+*/
 
 #include <iostream>
 #include <vector>
