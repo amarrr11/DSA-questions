@@ -27,6 +27,37 @@ struct Node {
     }
 };
 
+/*
+class Solution {
+public:
+    TreeNode* xpar=NULL,*ypar=NULL;
+    int xlvl,ylvl;
+    void dfs(TreeNode* root,TreeNode* parent, int a, int b,int lvl){
+        if(!root or (xpar!=NULL and  ypar!=NULL) or (xlvl!=-1 and ylvl!=-1)) return;
+
+        if(root->val==a){
+            xpar=parent;
+            xlvl=lvl;
+        }
+        if(root->val==b){
+            ypar=parent;
+            ylvl=lvl;
+        }
+
+        dfs(root->left,root,a,b,lvl+1);
+        dfs(root->right,root,a,b,lvl+1);
+
+    }
+    bool isCousins(TreeNode* root, int a, int b) {
+        
+        dfs(root,NULL,a,b,0) ;
+        if(xpar!=ypar and xlvl==ylvl){
+            return true;
+        }
+        return false;
+
+*/
+
 bool isCousins(Node* root, int a, int b) {
     queue<Node*> q;
     q.push(root);

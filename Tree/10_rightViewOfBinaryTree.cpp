@@ -20,7 +20,20 @@ ordered from top to bottom.*/
         solve(root,0,ans);
         return ans;
 */
+/*
+ void dfs(TreeNode* root,vector<int> &v,int lvl){ // if traversing left first then rewrite it
+        if(!root) return;
 
+        if(v.size()==lvl){
+            v.push_back(root->val);
+        }else if(v.size()>lvl){
+            v[lvl]=root->val;
+        }
+
+        dfs(root->left,v,lvl+1);
+        dfs(root->right,v,lvl+1);
+    }
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
