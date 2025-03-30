@@ -84,3 +84,29 @@ int main(){
     }
 
 }
+Node* build(vector<int>&v){
+	
+    Node* root=new Node(v[0]);
+    size_t=1;
+
+    queue<Node*> q;
+    q.push(root);
+    while(!q.empty()){
+        Node* temp=q.front();
+        q.pop();
+
+        if(i<v.size()){
+            Node* l=new Node(v[i++]);
+            temp->left=l;
+            q.push(l);
+        }
+        if(i<v.size()){
+            Node* r=new Node(v[i++]);
+            temp->right=r;
+            q.push(r);
+        }
+        
+    }
+    return root;
+
+}

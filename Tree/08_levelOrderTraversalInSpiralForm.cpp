@@ -33,7 +33,7 @@ vector<int> findSpiral(Node* root) {
             Node* temp = s1.top();
             s1.pop();
             ans.push_back(temp->data);
-
+            
             // Push right first for the next level (left to right)
             if (temp->right) {
                 s2.push(temp->right);
