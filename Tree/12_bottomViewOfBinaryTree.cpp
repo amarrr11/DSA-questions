@@ -49,10 +49,7 @@ class Solution {
             int line = q.front().second;
             q.pop();
             
-            // If no entry in map for this line, add it
-            if(mp.find(line) == mp.end()) {
-                mp[line] = temp->data;
-            }
+            mp[line] = temp->data;
             
             // Traverse the left child
             if(temp->left) {
