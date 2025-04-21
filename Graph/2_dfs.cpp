@@ -18,7 +18,11 @@ vector<int> dfsOfGraph(vector<vector<int>>& adj) {
     int n = adj.size();
     vector<int> vis(n, 0);
     ans.clear(); // Clear the result for multiple function calls
-    dfs(0, adj, vis);
+    for (int i = 0; i < n; i++) {
+        if (!vis[i]) {
+            dfs(i, adj, vis);
+        }
+    }
     return ans;
 }
 
